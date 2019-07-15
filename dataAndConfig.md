@@ -23,6 +23,12 @@ import VegaLite exposing (..)
 
 # 1. Data sources
 
+```elm {l}
+dataPath : String
+dataPath =
+    "https://jwolondon.github.io/vastchallenge2019/data/"
+```
+
 ## 1.1 Primary Data Sources
 
 The core data sources provided for the three challenges
@@ -30,23 +36,26 @@ The core data sources provided for the three challenges
 ```elm {l}
 mc1ReportData : Data
 mc1ReportData =
-    dataFromUrl "data/mc1ReportsTidy.csv" [ parse [ ( "location", foNum ), ( "intensity", foNum ) ] ]
+    dataFromUrl (dataPath ++ "mc1ReportsTidy.csv")
+        [ parse [ ( "location", foNum ), ( "intensity", foNum ) ] ]
 
 
 mc2StaticSensorReadings : Data
 mc2StaticSensorReadings =
-    dataFromUrl "data/staticSensorReadings.csv" [ parse [ ( "sensorId", foNum ), ( "cpm", foNum ) ] ]
+    dataFromUrl (dataPath ++ "staticSensorReadings.csv")
+        [ parse [ ( "sensorId", foNum ), ( "cpm", foNum ) ] ]
 
 
 mc2MobileSensorReadings : Data
 mc2MobileSensorReadings =
     -- Random sample for reduced file size download
-    dataFromUrl "data/mobileSensorReadingsRandomSample.csv" [ parse [ ( "sensorId", foNum ), ( "cpm", foNum ) ] ]
+    dataFromUrl (dataPath ++ "mobileSensorReadingsRandomSample.csv")
+        [ parse [ ( "sensorId", foNum ), ( "cpm", foNum ) ] ]
 
 
 mc3MessageData : Data
 mc3MessageData =
-    dataFromUrl "data/YInt.csv" []
+    dataFromUrl (dataPath ++ "YInt.csv") []
 ```
 
 ## 1.2 Geographic Data Sources
@@ -56,12 +65,12 @@ Neighbourhood boundaries and centroids.
 ```elm {l}
 neighbourhoodBounds : Data
 neighbourhoodBounds =
-    dataFromUrl "data/StHimark.json" [ topojsonFeature "StHimark" ]
+    dataFromUrl (dataPath ++ "StHimark.json") [ topojsonFeature "StHimark" ]
 
 
 neighbourhoodCentroids : Data
 neighbourhoodCentroids =
-    dataFromUrl "data/nhCentroids.csv" []
+    dataFromUrl (dataPath ++ "nhCentroids.csv") []
 ```
 
 Points of interest (hosptals and power plant).
@@ -69,7 +78,7 @@ Points of interest (hosptals and power plant).
 ```elm {l}
 pois : Data
 pois =
-    dataFromUrl "data/pois.csv" []
+    dataFromUrl (dataPath ++ "pois.csv") []
 ```
 
 Road bridges (digitized separately).
@@ -77,7 +86,7 @@ Road bridges (digitized separately).
 ```elm {l}
 bridges : Data
 bridges =
-    dataFromUrl "data/bridges.json" [ topojsonFeature "bridges" ]
+    dataFromUrl (dataPath ++ "bridges.json") [ topojsonFeature "bridges" ]
 ```
 
 Gridded bridges and highway for entering/leaving St Himark.
@@ -85,7 +94,7 @@ Gridded bridges and highway for entering/leaving St Himark.
 ```elm {l}
 exitData : Data
 exitData =
-    dataFromUrl "data/exits.csv" []
+    dataFromUrl (dataPath ++ "exits.csv") []
 ```
 
 Main quake shake contours (digitized separately).
@@ -93,7 +102,8 @@ Main quake shake contours (digitized separately).
 ```elm {l}
 quakeContours : Data
 quakeContours =
-    dataFromUrl "data/quakeContours.json" [ topojsonFeature "quakeContours" ]
+    dataFromUrl (dataPath ++ "quakeContours.json")
+        [ topojsonFeature "quakeContours" ]
 ```
 
 Location of the static sensors used in MC2.
@@ -101,7 +111,7 @@ Location of the static sensors used in MC2.
 ```elm {l}
 staticSensorLocations : Data
 staticSensorLocations =
-    dataFromUrl "data/staticSensorLocations.csv" []
+    dataFromUrl (dataPath ++ "staticSensorLocations.csv") []
 ```
 
 ## 1.3 Supporting Data
@@ -176,7 +186,7 @@ tidyReport =
 
 reportTypeData : Data
 reportTypeData =
-    dataFromUrl "data/damageReportTypes.csv" []
+    dataFromUrl (dataPath ++ "damageReportTypes.csv") []
 ```
 
 ### Data derived from MC2 mobile sensors
@@ -186,7 +196,7 @@ The MC2 mobile dataset is very large with many consecutive sensor readings with 
 ```elm {l}
 mobileSensorReadingsThinned5 : Data
 mobileSensorReadingsThinned5 =
-    dataFromUrl "data/mobileSensorReadingsThinned5.csv"
+    dataFromUrl (dataPath ++ "mobileSensorReadingsThinned5.csv")
         [ parse
             [ ( "secondsFromStart", foNum )
             , ( "cpm", foNum )
@@ -197,7 +207,7 @@ mobileSensorReadingsThinned5 =
 
 mobileSensorReadingsThinned10 : Data
 mobileSensorReadingsThinned10 =
-    dataFromUrl "data/mobileSensorReadingsThinned10.csv"
+    dataFromUrl (dataPath ++ "mobileSensorReadingsThinned10.csv")
         [ parse
             [ ( "secondsFromStart", foNum )
             , ( "cpm", foNum )
@@ -208,7 +218,7 @@ mobileSensorReadingsThinned10 =
 
 mobileSensorReadingsThinned20 : Data
 mobileSensorReadingsThinned20 =
-    dataFromUrl "data/mobileSensorReadingsThinned20.csv"
+    dataFromUrl (dataPath ++ "mobileSensorReadingsThinned20.csv")
         [ parse
             [ ( "secondsFromStart", foNum )
             , ( "cpm", foNum )
@@ -222,7 +232,8 @@ Registered names of all 50 mobile sensors.
 ```elm {l}
 sensorNameData : Data
 sensorNameData =
-    dataFromUrl "data/sensorNames.csv" [ parse [ ( "sensorId", foNum ) ] ]
+    dataFromUrl (dataPath ++ "sensorNames.csv")
+        [ parse [ ( "sensorId", foNum ) ] ]
 ```
 
 A random sample from the full dataset useful for some quicker exploratory analysis.
@@ -230,7 +241,8 @@ A random sample from the full dataset useful for some quicker exploratory analys
 ```elm{l}
 mobileSensorReadingsRandomSample : Data
 mobileSensorReadingsRandomSample =
-    dataFromUrl "data/mobileSensorReadingsRandomSample.csv" [ parse [ ( "value", foNum ) ] ]
+    dataFromUrl (dataPath ++ "mobileSensorReadingsRandomSample.csv")
+        [ parse [ ( "value", foNum ) ] ]
 ```
 
 For showing the trajectories of mobile sensors, consecutive readings at the same location are [filtered out](../otherCode/simplify/src/SimplifySignal.elm).
@@ -238,7 +250,8 @@ For showing the trajectories of mobile sensors, consecutive readings at the same
 ```elm {l}
 mobileSensorTrajectories : Data
 mobileSensorTrajectories =
-    dataFromUrl "data/mobileTrajectories.csv" [ parse [ ( "sensorId", foNum ) ] ]
+    dataFromUrl (dataPath ++ "mobileTrajectories.csv")
+        [ parse [ ( "sensorId", foNum ) ] ]
 ```
 
 ### Data derived from MC3 messages
@@ -246,7 +259,7 @@ mobileSensorTrajectories =
 ```elm {l}
 wordFreqData : Data
 wordFreqData =
-    dataFromUrl "data/wordFreqs.csv" [ parse [ ( "freq", foNum ) ] ]
+    dataFromUrl (dataPath ++ "wordFreqs.csv") [ parse [ ( "freq", foNum ) ] ]
 ```
 
 Extracting the numbers of fatailities claimed in the various messages can be achieved with the command line:
@@ -260,7 +273,7 @@ _(search for lines that contain `fatal` within them; cut out the comma-separated
 ```elm {l}
 fatalityData : Data
 fatalityData =
-    dataFromUrl "data/fatalNumbers.csv" [ parse [ ( "fatalNum", foNum ) ] ]
+    dataFromUrl (dataPath ++ "fatalNumbers.csv") [ parse [ ( "fatalNum", foNum ) ] ]
 ```
 
 # 2. Colour Schemes
