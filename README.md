@@ -15,3 +15,8 @@ _Note: For full interaction, viualization and formatting, view the following doc
 
 - [Mini Challenge 1 exploration](./mc1Exploration.md)
 - [Mini Challenge 1 answers](./mc1Answers.md)
+
+### Mini Challenge 2
+
+- [Mini Challenge 2 exploration](./mc2Exploration.md)
+- [Mini Challenge 2 answers](./mc2Answers.md)
