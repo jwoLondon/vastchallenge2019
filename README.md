@@ -26,6 +26,10 @@ _Note: For full interaction, viualization and formatting, view the following doc
 - [Mini Challenge 3 exploration](./mc3Exploration.md)
 - [Mini Challenge 3 answers](./mc3Answers.md)
 
+### Grand Challenge
+
+- [Grand Challenge answers](./gcAnswers.md)
+
 ### Supporting documents and code
 
 - [wordclouds in Vega](./wordcloud.md)
