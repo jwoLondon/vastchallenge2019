@@ -30,6 +30,9 @@ _Note: For full interaction, viualization and formatting, view the following doc
 
 - [Grand Challenge answers](./gcAnswers.md)
 
-### Supporting documents and code
+### Supporting code and documents
 
-- [wordclouds in Vega](./wordcloud.md)
+- [Sensor simplifier (Elm)](./otherCode/SimplifySignal.elm) for thinning dense sensor data with Douglas-Peucker simplification.
+- [CUSUM calculator (Elm)](./otherCode/Cusum.elm) for adding CUSUM values to sensor data.
+- [Message filter (Elm)](./otherCode/MessageFilter.elm) for removing stopwords etc.
+- [wordclouds creator](./wordcloud.md) For generating dense wordclouds with Vega.
