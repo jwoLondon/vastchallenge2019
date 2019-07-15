@@ -20,3 +20,12 @@ _Note: For full interaction, viualization and formatting, view the following doc
 
 - [Mini Challenge 2 exploration](./mc2Exploration.md)
 - [Mini Challenge 2 answers](./mc2Answers.md)
+
+### Mini Challenge 3
+
+- [Mini Challenge 3 exploration](./mc3Exploration.md)
+- [Mini Challenge 3 answers](./mc3Answers.md)
+
+### Supporting documents and code
+
+- [wordclouds in Vega](./wordcloud.md)
