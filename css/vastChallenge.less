@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto+Slab|Fjalla+One|Caveat");
+
+// Stylesheet for default litvis formatting.
+// V1.0, 20th January, 2019
+
+#litvis {
+  @fSize: 11pt;
+
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: @fSize;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Fjalla One", sans-serif;
+  }
+
+  h2 {
+    font-size: 1.8 * @fSize;
+  }
+  h3 {
+    font-size: 1.2 * @fSize;
+  }
+  h4,
+  h5,
+  h6 {
+    font-size: 1 * @fSize;
+  }
+
+  blockquote {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.1 * @fSize;
+    background-color: #f6f6f6;
+    margin-right: 2em;
+  }
+
+  blockquote h1,
+  blockquote h2,
+  blockquote h3,
+  blockquote h4,
+  blockquote h5,
+  blockquote h6 {
+    font-family: "Roboto Slab", sans-serif;
+  }
+
+  code,
+  pre {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  pre {
+    border: solid 1px #ccc;
+    border-radius: 8px;
+  }
+
+  ol {
+    list-style-type: lower-alpha;
+  }
+
+  div[data-role="litvisOutput"] > span {
+    font-family: iosevka, monospace;
+    font-weight: bold;
+    font-size: 1.6 * @fSize;
+    display: block;
+    margin-bottom: 0.75em;
+    border-style: none none none solid;
+    border-width: 1px;
+    border-color: #ccc;
+    padding-left: 0.5em;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"],
+  input[type="select"],
+  input[type="range"] {
+    margin-left: 1em;
+  }
+
+  input[type="range"] {
+    min-width: 120px;
+    max-width: 120px;
+  }
+}

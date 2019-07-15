@@ -1,0 +1,154 @@
+labels:
+  - name: todo
+    paired:
+      htmlTemplate: <span class="todo">{{children}}</span>
+
+  - name: caption
+    paired:
+      htmlTemplate: <div class="caption">Figure {{children}}</div>
+
+  - name: titleEntry
+    paired:
+      htmlTemplate: <div class="titleEntry"><span style="font-weight:normal">Entry Name:</span> gicentre-wood-{{children}}</div>
+
+  - name: titleYear
+    paired:
+      htmlTemplate: <div class="titleYear">VAST Challenge{{children}}</div>
+
+  - name: titleChallenge
+    paired:
+      htmlTemplate: <div class="titleChallenge">{{children}}</div>
+
+  - name: timestamp
+    paired:
+      htmlTemplate: <div class="timestamp"><hr />{{children}}</div>
+
+  - name: duration
+    paired:
+      htmlTemplate: <div class="duration">{{children}}⇧</div>
+
+  - name: observation
+    paired:
+      htmlTemplate: <div class="observation"><fieldset><legend>observation</legend>{{children}}</fieldset></div>
+
+  - name: question
+    paired:
+      htmlTemplate: <div class="question">{{children}}</div>
+
+  - name: design
+    paired:
+      htmlTemplate: <div class="design"><fieldset><legend>design</legend>{{children}}</fieldset></div>
+
+  - name: aim
+    paired:
+      htmlTemplate: <div class="aim"><fieldset><legend>Aim</legend>{{children}}</fieldset></div>
+
+  - name: elmExample
+    paired:
+      htmlTemplate: <div class="elmExample"><fieldset><legend>Elm</legend>{{children}}</fieldset></div>
+
+  - name: task
+    paired:
+      htmlTemplate: <div class="task"><fieldset><legend>Task</legend>{{children}}</fieldset></div>
+
+  - name: annotation
+    paired:
+      htmlTemplate: <div class="annotation"><fieldset><legend>my annotation</legend>{{children}}</fieldset></div>
+
+  - name: infobox
+    paired:
+      htmlTemplate: <div class="infobox">{{children}}</div>
+
+styling:
+  css: |
+    .todo {
+      font-style: italic;
+      background: yellow;
+    }
+
+    .caption {
+        font-weight: 300;
+        font-style: italic;
+        font-size: 1.1em;
+        margin-top: -1em;
+      }
+
+    .titleEntry,.titleYear,.titleChallenge {
+      text-align: center;
+      font-weight: bold;
+      padding:0;
+      margin:-0.8em;
+      font-size:1.2em;
+    }
+
+    .question {
+      font-style: italic;
+      font-weight: bold;
+      color: #c00;
+    }
+
+    .timestamp {
+      font-style: italic;
+      font-weight: bold;
+      text-align:right;
+      margin-right: auto;
+      margin-bottom: -1.5em;
+    }
+
+    .duration {
+      font-style: italic;
+      text-align:right;
+      margin-right: auto;
+    }
+
+    .timestamp hr {
+        height:1px;
+        border:none;
+        color:#ccc;
+        background-color:#ccc;
+        width:33%;
+        text-align:right;
+        margin: 0 0 0 auto;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    legend {
+      font-size:0.9em; font-style: italic; text-align: right;
+    }
+
+    .aim fieldset, .observation fieldset {
+        background: #eee;
+        margin-bottom: 1em;
+    }
+
+    .design fieldset {
+          background: rgb(248,228,216);
+          margin-bottom: 1em;
+          font-style: italic;
+      }
+
+    .task, .annotation {
+      margin-top: 0.1em;
+      margin-bottom: 1em;
+    }
+
+    .task fieldset {
+      background: #fffafa;
+      border-color: #a66;
+    }
+
+    .annotation fieldset {
+      font-size: 1.2em;
+      font-family: caveat, cursive !important;
+    }
+
+    .infobox {
+      background: #eee;
+      margin-left: 2em;
+      margin-bottom:1em;
+      padding: 1em;
+      padding-bottom: 0.5em;
+    }
