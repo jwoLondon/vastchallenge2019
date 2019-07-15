@@ -6,6 +6,12 @@ For details of the challenge, see the official [VAST Challenge 2019 pages](https
 
 ## Literate Visualization Documents
 
+_Note: For full interaction, viualization and formatting, view the following documents from within [litvis](https://github.com/gicentre/litvis) either in Atom or VSCode._
+
 - [Data sources and configuration used across mini-challenges](./dataAndConfig.md)
 - [Inital exploration diary](./diary.md)
+
+### Mini Challenge 1
+
 - [Mini Challenge 1 exploration](./mc1Exploration.md)
+- [Mini Challenge 1 answers](./mc1Answers.md)
