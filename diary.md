@@ -337,7 +337,7 @@ mc2StaticSensorDistUpper : Spec
 mc2StaticSensorDistUpper =
     let
         trans =
-            transform << filter (fiExpr "datum.value > 60")
+            transform << filter (fiExpr "datum.cpm > 60")
 
         enc =
             encoding
@@ -368,7 +368,7 @@ mc2MobileSensorDistLower : Spec
 mc2MobileSensorDistLower =
     let
         trans =
-            transform << filter (fiExpr "datum.value < 100")
+            transform << filter (fiExpr "datum.cpm < 100")
 
         enc =
             encoding
@@ -404,7 +404,7 @@ mc2MobileSensorDistUpper =
     let
         trans =
             transform
-                << filter (fiExpr "datum.value >=100 && datum.value < 2000")
+                << filter (fiExpr "datum.cpm >=100 && datum.cpm < 2000")
 
         enc =
             encoding
