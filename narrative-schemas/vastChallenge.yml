@@ -43,6 +43,14 @@ labels:
     paired:
       htmlTemplate: <div class="aim"><fieldset><legend>Aim</legend>{{children}}</fieldset></div>
 
+  - name: slide
+    paired:
+      htmlTemplate: <div class="slide">{{children}}</div>
+
+  - name: excerpt
+    paired:
+      htmlTemplate: <div class="excerpt">{{children}}</div>
+
   - name: elmExample
     paired:
       htmlTemplate: <div class="elmExample"><fieldset><legend>Elm</legend>{{children}}</fieldset></div>
@@ -152,3 +160,25 @@ styling:
       padding: 1em;
       padding-bottom: 0.5em;
     }
+
+    .slide {
+          background: rgb(255, 254, 242);
+          height: 89.5vh;
+          margin: 5vh;
+          padding: 1vh;
+          border: 1px solid #ccc;
+          border-radius: 12px;
+      }
+
+    .excerpt {
+          background: #fff;
+          font-size: 20pt;
+          margin: 5vh;
+          padding: 1vh;
+          border: 1px solid #ccc;
+          border-radius: 12px;
+      }
+
+    .excerpt h1, .excerpt h2, .excerpt h3 {
+         text-align: left !important;
+      }
