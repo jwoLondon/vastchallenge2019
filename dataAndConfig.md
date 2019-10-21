@@ -742,13 +742,13 @@ contextMap =
         specBridges =
             asSpec
                 [ bridges
-                , geoshape [ maStroke "#eee", maStrokeWidth 4 ]
+                , geoshape [ maStroke "#eee", maStrokeWidth 4, maFilled False ]
                 ]
 
         specContours =
             asSpec
                 [ quakeContours
-                , geoshape [ maStroke "#ecc", maStrokeWidth 2, maOpacity 0.7 ]
+                , geoshape [ maStroke "#ecc", maStrokeWidth 2, maOpacity 0.7, maFilled False ]
                 ]
 
         encLabels =
@@ -813,7 +813,7 @@ mc2StaticSensorMap =
         specBridges =
             asSpec
                 [ bridges
-                , geoshape [ maStroke "#eee", maStrokeWidth 4 ]
+                , geoshape [ maStroke "#eee", maStrokeWidth 4, maFilled False ]
                 ]
 
         encPois =
